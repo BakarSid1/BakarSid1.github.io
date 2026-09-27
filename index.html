@@ -33,11 +33,6 @@
             font-weight: 700;
         }
 
-        .nav-logo span {
-            color: #cc0033;
-            margin-right: 8px;
-        }
-
         .nav-links {
             display: flex;
             align-items: center;
@@ -209,6 +204,40 @@
             color: #333;
         }
 
+        /* Certifications Grid */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+
+        .cert-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #b8293d;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .cert-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #0d1117;
+        }
+
+        .cert-card .issuer {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .cert-card .date {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -256,8 +285,9 @@
         <div class="nav-logo">Abu Bakar's Portfolio</div>
         <div class="nav-links">
             <a href="#about">About</a>
+            <a href="#certifications">Certifications</a>
             <a href="#projects">Projects</a>
-            <a href="#" class="btn-black">Download Resume</a>
+            <a href="Resume.pdf" class="btn-black" target="_blank">Download Resume</a>
         </div>
     </nav>
 
@@ -266,59 +296,95 @@
         <!-- Profile Column -->
         <div class="profile-card">
             <div class="profile-img-container">
-                <!-- Save your photo in the GitHub repo as profile.png or profile.jpg -->
                 <img src="profile.jpg" alt="Abu Bakar Siddik">
             </div>
             <h3>Abu Bakar Siddik</h3>
-            <p class="school">Finance & Supply Chain</p>
-            <p class="grad-year">Class of 2028 (Expected)</p>
+            <p class="school">Rutgers Business School</p>
+            <p class="grad-year">Class of May 2029 (Expected)</p>
         </div>
 
         <!-- Bio Column -->
         <div class="hero-content">
-            <span class="badge">Currently: Exploring Finance Pathways & Supply Chain</span>
-            <h1 class="hero-title">Strategic financial analysis and supply chain innovation.</h1>
+            <span class="badge">Currently: Exploring Finance Pathways</span>
+            <h1 class="hero-title">Data-driven financial analysis and strategic corporate growth.</h1>
             <p class="hero-description">
-                An ambitious business student exploring career pathways in finance with a strong interest in minoring in supply chain management to build data-driven operations and strategic leadership skills.
+                A Finance student at Rutgers Business School (4.0 GPA) expecting to graduate in May 2029, dedicated to mastering portfolio risk analysis, business judgment, and data analytics[cite: 4, 5].
             </p>
             <div class="cta-group">
-                <a href="mailto:your-email@example.com" class="btn-pill">Email Me</a>
-                <a href="https://linkedin.com" target="_blank" class="link-arrow">LinkedIn Profile &rarr;</a>
+                <a href="mailto:bakar.siddik@rutgers.edu" class="btn-pill">Email Me</a>
+                <a href="https://www.linkedin.com/in/abu-bakar-siddik-45755b360/" target="_blank" class="link-arrow">LinkedIn Profile &rarr;</a>
             </div>
         </div>
     </section>
 
-    <!-- Skills & Projects Content -->
-    <section class="content-section" id="projects">
+    <!-- Skills, Certifications & Projects Content -->
+    <section class="content-section">
+        <!-- Skills -->
         <h2 class="section-title">Core Skills</h2>
-        <p class="section-subtitle">Key technical and professional competencies in finance, operations, and web development.</p>
+        <p class="section-subtitle">Technical, analytical, and interpersonal competencies derived from coursework, certifications, and field experience[cite: 4, 5].</p>
         <div class="skills-container">
-            <span class="skill-pill">Financial Analysis</span>
-            <span class="skill-pill">Supply Chain Management</span>
-            <span class="skill-pill">Data Modeling</span>
+            <span class="skill-pill">Financial Analysis & Valuation</span>
+            <span class="skill-pill">Microsoft Excel</span>
+            <span class="skill-pill">Pivot Tables</span>
+            <span class="skill-pill">Data Analytics</span>
+            <span class="skill-pill">Business Judgment</span>
+            <span class="skill-pill">Attention to Detail</span>
+            <span class="skill-pill">Client Relationship Management</span>
+            <span class="skill-pill">Bilingual (English & Bengali)</span>
             <span class="skill-pill">HTML5 & CSS3</span>
             <span class="skill-pill">Git & GitHub</span>
-            <span class="skill-pill">Strategic Planning</span>
         </div>
 
-        <h2 class="section-title">Core Pillars: My Work</h2>
-        <p class="section-subtitle">Projects highlighting analytical problem-solving, strategic research, and technical execution.</p>
+        <!-- Certifications -->
+        <h2 class="section-title" id="certifications">Licenses & Certifications</h2>
+        <p class="section-subtitle">Professional badges and credentials earned from industry programs and academic institutions[cite: 5].</p>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <h4>PNC - Banking at PNC: Building Career Skills</h4>
+                <p class="issuer">Forage • Issued Sep 2026[cite: 5]</p>
+                <p class="date">Skills: Business Judgment, Attention to Detail[cite: 5]</p>
+            </div>
+            <div class="cert-card">
+                <h4>Online Learning Skills</h4>
+                <p class="issuer">Rutgers University–New Brunswick • Issued Mar 2026[cite: 5]</p>
+                <p class="date">Credential ID: 177278539[cite: 5]</p>
+            </div>
+            <div class="cert-card">
+                <h4>Excel 2019 Essential Training</h4>
+                <p class="issuer">LinkedIn • Issued Nov 2025[cite: 5]</p>
+                <p class="date">Skills: Microsoft Excel[cite: 5]</p>
+            </div>
+            <div class="cert-card">
+                <h4>Learning Data Analytics</h4>
+                <p class="issuer">LinkedIn • Issued Nov 2025[cite: 5]</p>
+                <p class="date">Skills: Data Analytics[cite: 5]</p>
+            </div>
+            <div class="cert-card">
+                <h4>Excel: PivotTables for Beginners (2018)</h4>
+                <p class="issuer">LinkedIn • Issued Oct 2025[cite: 5]</p>
+                <p class="date">Skills: Pivot Tables[cite: 5]</p>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <h2 class="section-title" id="projects">Core Pillars: My Work</h2>
+        <p class="section-subtitle">Highlights from recent academic coursework, job simulations, and technical execution[cite: 1, 4, 5].</p>
 
         <div class="projects-grid">
             <div class="project-card">
+                <h3>PNC Banking & Investment Simulation</h3>
+                <p>Analyzed investment portfolio data in Excel to evaluate performance and risk, summarizing findings for non-technical stakeholders in a consultative client simulation[cite: 4, 5].</p>
+                <a href="https://github.com" target="_blank">View Simulation Details &rarr;</a>
+            </div>
+            <div class="project-card">
                 <h3>Personal Portfolio Website</h3>
-                <p>Designed and deployed a responsive personal website hosted on GitHub Pages showcasing personal statements, skills, and academic projects.</p>
+                <p>Designed and deployed a modern personal website hosted on GitHub Pages showcasing academic highlights, personal statements, and professional background[cite: 1, 4].</p>
                 <a href="https://github.com" target="_blank">View Code on GitHub &rarr;</a>
             </div>
             <div class="project-card">
-                <h3>Financial Valuation Model</h3>
+                <h3>Financial Market Analysis</h3>
                 <p>Constructed financial evaluation models analyzing corporate capital structure, growth metrics, and market valuation strategies.</p>
-                <a href="https://github.com" target="_blank">View Project &rarr;</a>
-            </div>
-            <div class="project-card">
-                <h3>Supply Chain Optimization Case</h3>
-                <p>Analyzed logistics workflows and inventory management practices to propose actionable cost reduction strategies.</p>
-                <a href="https://github.com" target="_blank">View Project &rarr;</a>
+                <a href="https://github.com" target="_blank">View Analysis &rarr;</a>
             </div>
         </div>
     </section>
