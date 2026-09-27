@@ -3,152 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+    <title>Abu Bakar Siddik - Portfolio</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            background-color: #ffffff;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            padding: 20px;
         }
-        .container {
-            max-width: 800px;
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 64px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        header {
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+
+        .nav-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
         }
-        h1 {
-            font-size: 2.2rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
+
+        .nav-logo span {
+            color: #cc0033;
+            margin-right: 8px;
         }
-        .personal-statement {
-            font-size: 1.15rem;
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
             color: #555;
+            font-size: 0.95rem;
             font-weight: 500;
         }
-        section {
-            margin-bottom: 30px;
+
+        .btn-black {
+            background-color: #0d1117;
+            color: #ffffff !important;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: opacity 0.2s;
         }
-        h2 {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
+
+        .btn-black:hover {
+            opacity: 0.85;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1100px;
+            margin: 40px auto 80px auto;
+            padding: 0 24px;
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        /* Left Column: Profile Card */
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 220px;
+        }
+
+        .profile-img-container {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-card h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .profile-card .school {
+            color: #b8293d;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .profile-card .grad-year {
+            color: #888;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        /* Right Column: Bio Content */
+        .hero-content {
+            flex: 1;
+        }
+
+        .badge {
             display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            background-color: #fde8eb;
+            color: #a0283b;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
-        .skills-list {
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            color: #0d1117;
+        }
+
+        .hero-description {
+            color: #555555;
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            max-width: 680px;
+        }
+
+        .cta-group {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .btn-pill {
+            background-color: #f4f5f7;
+            color: #333;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .link-arrow {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Main Content Section */
+        .content-section {
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            padding: 0 24px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* Skills Pill Section */
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            list-style: none;
+            margin-bottom: 50px;
         }
-        .skills-list li {
-            background: #eef6fb;
-            color: #2980b9;
-            padding: 6px 14px;
-            border-radius: 20px;
+
+        .skill-pill {
+            background-color: #f4f5f7;
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-size: 0.9rem;
             font-weight: 600;
-            font-size: 0.95rem;
+            color: #333;
         }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
         .project-card {
-            background: #fafafa;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 18px;
-            margin-bottom: 15px;
+            background-color: #fafafa;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
         .project-card h3 {
             font-size: 1.2rem;
-            color: #2c3e50;
-            margin-bottom: 6px;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
+
         .project-card p {
+            font-size: 0.9rem;
             color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+            margin-bottom: 16px;
         }
+
         .project-card a {
-            color: #3498db;
+            color: #a0283b;
             text-decoration: none;
             font-weight: 600;
-        }
-        .project-card a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #888;
             font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Header & Personal Statement -->
-        <header>
-            <h1>Your Name</h1>
-            <p class="personal-statement">
-                A driven web development enthusiast dedicated to building clean, accessible, and user-friendly digital experiences.
+    <!-- Header Navigation -->
+    <nav>
+        <div class="nav-logo">Abu Bakar's Portfolio</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#" class="btn-black">Download Resume</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <!-- Profile Column -->
+        <div class="profile-card">
+            <div class="profile-img-container">
+                <!-- Save your photo in the GitHub repo as profile.png or profile.jpg -->
+                <img src="profile.jpg" alt="Abu Bakar Siddik">
+            </div>
+            <h3>Abu Bakar Siddik</h3>
+            <p class="school">Finance & Supply Chain</p>
+            <p class="grad-year">Class of 2028 (Expected)</p>
+        </div>
+
+        <!-- Bio Column -->
+        <div class="hero-content">
+            <span class="badge">Currently: Exploring Finance Pathways & Supply Chain</span>
+            <h1 class="hero-title">Strategic financial analysis and supply chain innovation.</h1>
+            <p class="hero-description">
+                An ambitious business student exploring career pathways in finance with a strong interest in minoring in supply chain management to build data-driven operations and strategic leadership skills.
             </p>
-        </header>
+            <div class="cta-group">
+                <a href="mailto:your-email@example.com" class="btn-pill">Email Me</a>
+                <a href="https://linkedin.com" target="_blank" class="link-arrow">LinkedIn Profile &rarr;</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Skills Showcase -->
-        <section>
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Git & GitHub</li>
-                <li>Responsive Design</li>
-                <li>Problem Solving</li>
-            </ul>
-        </section>
+    <!-- Skills & Projects Content -->
+    <section class="content-section" id="projects">
+        <h2 class="section-title">Core Skills</h2>
+        <p class="section-subtitle">Key technical and professional competencies in finance, operations, and web development.</p>
+        <div class="skills-container">
+            <span class="skill-pill">Financial Analysis</span>
+            <span class="skill-pill">Supply Chain Management</span>
+            <span class="skill-pill">Data Modeling</span>
+            <span class="skill-pill">HTML5 & CSS3</span>
+            <span class="skill-pill">Git & GitHub</span>
+            <span class="skill-pill">Strategic Planning</span>
+        </div>
 
-        <!-- Projects Section -->
-        <section>
-            <h2>Projects</h2>
+        <h2 class="section-title">Core Pillars: My Work</h2>
+        <p class="section-subtitle">Projects highlighting analytical problem-solving, strategic research, and technical execution.</p>
 
+        <div class="projects-grid">
             <div class="project-card">
                 <h3>Personal Portfolio Website</h3>
-                <p>A responsive digital business card hosted on GitHub Pages displaying core skills, project accomplishments, and personal contact details.</p>
-                <a href="https://github.com/yourusername/your-repo-name" target="_blank">View Code on GitHub &rarr;</a>
+                <p>Designed and deployed a responsive personal website hosted on GitHub Pages showcasing personal statements, skills, and academic projects.</p>
+                <a href="https://github.com" target="_blank">View Code on GitHub &rarr;</a>
             </div>
-
             <div class="project-card">
-                <h3>Task Manager Web App</h3>
-                <p>An interactive web application allowing users to organize daily tasks, set priorities, and track completion progress with local storage support.</p>
-                <a href="https://github.com/yourusername/task-manager" target="_blank">View Code on GitHub &rarr;</a>
+                <h3>Financial Valuation Model</h3>
+                <p>Constructed financial evaluation models analyzing corporate capital structure, growth metrics, and market valuation strategies.</p>
+                <a href="https://github.com" target="_blank">View Project &rarr;</a>
             </div>
-
             <div class="project-card">
-                <h3>Interactive Quiz App</h3>
-                <p>A dynamically rendered multiple-choice application built with vanilla JavaScript that provides real-time scoring and feedback.</p>
-                <a href="https://github.com/yourusername/quiz-app" target="_blank">View Code on GitHub &rarr;</a>
+                <h3>Supply Chain Optimization Case</h3>
+                <p>Analyzed logistics workflows and inventory management practices to propose actionable cost reduction strategies.</p>
+                <a href="https://github.com" target="_blank">View Project &rarr;</a>
             </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Your Name. All rights reserved.</p>
-        </footer>
-    </div>
+        </div>
+    </section>
 
 </body>
 </html>
